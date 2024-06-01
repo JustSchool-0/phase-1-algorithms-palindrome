@@ -1,25 +1,35 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+    const lowerCase = word.toLowerCase();
+    return lowerCase === lowerCase.split('').reverse().join('');
 }
 
 /* 
-  Add your pseudocode here
+  convert word to lowercase
+  check if word === word reversed
+  return result
 */
 
 /*
-  Add written explanation of your solution here
+- Make the string case-insensitive.
+- Reverse the sequence of characters.
+- Check if the reversed string matches the original.
 */
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
+    // add your own custom tests in here
+    console.log("Expecting: true");
+    console.log("=>", isPalindrome("madam"));
 
-  console.log("");
+    console.log("");
 
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
+    console.log("Expecting: true");
+    console.log("=>", isPalindrome("racecar"));
+
+    console.log("");
+
+    console.log("Expecting: false");
+    console.log("=>", isPalindrome("robot"));
 }
 
 module.exports = isPalindrome;
